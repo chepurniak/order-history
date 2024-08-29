@@ -18,7 +18,6 @@ const avatarColors = [
 const randomColor = Math.floor(Math.random() * avatarColors.length);
 
 const drawerLeft = ref(false);
-const isDevelopment = import.meta.env.VITE_KEYCLOAK_REALM === 'staging';
 
 function getNameInitials() {
   const name = 'User';
@@ -67,12 +66,6 @@ function getNameInitials() {
 </template>
 
 <style scoped lang="scss">
-.warning {
-  border: 1px solid yellow;
-  width: 100%;
-  text-align: center;
-}
-
 .avatar {
   border-radius: 100%;
   height: 3rem;

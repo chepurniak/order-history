@@ -1,54 +1,43 @@
 <script lang="ts" setup>
-// import { onMounted, computed, inject, watch } from 'vue';
-// import { useI18n } from 'vue-i18n';
-// import { useRoute } from 'vue-router';
-// import { useOperationEventStore } from 'src/stores/operationEventStore';
-// import { useLocalStorage } from '@vueuse/core';
-// import { Keycloak } from '@relaxdays/keycloak';
-// import { overwriteKc } from 'src/services/authentication/keycloak';
-// import { refreshAuthHeader } from 'src/services/axios';
-// import { useQuasar } from 'quasar';
-// import BaseData from 'src/components/BaseData.vue';
-// import EventsFilterBar from 'src/components/EventsFilterBar.vue';
-// import EventsTimeline from 'src/components/EventsTimeline.vue';
-// import EventsList from 'src/components/EventsList.vue';
-// import OperationActions from 'src/components/furtherActions/OperationActions.vue';
-// import baseDataImg from 'src/assets/baseData.svg';
+import { onMounted, computed, inject } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { useRoute } from 'vue-router';
+import { useOperationEventStore } from 'src/stores/operationEventStore';
+import { useLocalStorage } from '@vueuse/core';
+import BaseData from 'src/components/BaseData.vue';
+import EventsFilterBar from 'src/components/EventsFilterBar.vue';
+import EventsTimeline from 'src/components/EventsTimeline.vue';
+import EventsList from 'src/components/EventsList.vue';
+import OperationActions from 'src/components/furtherActions/OperationActions.vue';
+import baseDataImg from 'src/assets/baseData.svg';
 
-// const kc = inject('$kc') as Keycloak;
-// const $q = useQuasar();
-// const props = defineProps<{ orderReceiptId: number }>();
+const props = defineProps<{ orderReceiptId: number }>();
 
-// const { t } = useI18n();
-// const route = useRoute();
+const { t } = useI18n();
+const route = useRoute();
 
-// const baseUrl = import.meta.env.VITE_APP_BASE_URL;
+const operationEventStore = useOperationEventStore();
+const showBaseData = useLocalStorage('ShowBaseData', false);
 
-// const operationEventStore = useOperationEventStore();
-// const showBaseData = useLocalStorage('ShowBaseData', false);
+const noEvents = computed(() => operationEventStore.operationEvents?.length);
+const noFilteredEvents = computed(() => operationEventStore.getFilteredEvents.length === 0);
 
-// const noEvents = computed(() => operationEventStore.operationEvents?.length);
-// const noFilteredEvents = computed(() => operationEventStore.getFilteredEvents.length === 0);
-
-// onMounted(async () => {
-//   overwriteKc(kc);
-//   refreshAuthHeader(kc.token);
-//   operationEventStore.$reset();
-//   operationEventStore.isEventsLoading = true;
-//   const success = await operationEventStore.fetchMainOperationEvents(
-//     props.orderReceiptId ?? route.params.orderReceiptId
-//   );
-//   operationEventStore.isEventsLoading = false;
-//   if (!success) return;
-//   await operationEventStore.fetchOperationBaseData(props.orderReceiptId ?? route.params.orderReceiptId);
-//   await operationEventStore.fetchPositions(props.orderReceiptId ?? route.params.orderReceiptId);
-//   void operationEventStore.compareAllAvailableEvents();
-// });
+onMounted(async () => {
+  operationEventStore.$reset();
+  operationEventStore.isEventsLoading = true;
+  const success = await operationEventStore.fetchMainOperationEvents(
+    props.orderReceiptId ?? route.params.orderReceiptId
+  );
+  operationEventStore.isEventsLoading = false;
+  if (!success) return;
+  await operationEventStore.fetchOperationBaseData(props.orderReceiptId ?? route.params.orderReceiptId);
+  await operationEventStore.fetchPositions(props.orderReceiptId ?? route.params.orderReceiptId);
+  void operationEventStore.compareAllAvailableEvents();
+});
 </script>
 
 <template>
-  TEST
-  <!-- <div
+  <div
     class="col row no-wrap"
     style="min-height: inherit"
   >
@@ -133,7 +122,7 @@
         </QCard>
       </KeepAlive>
     </Transition>
-  </div> -->
+  </div>
 </template>
 
 <!-- <style lang="scss">
