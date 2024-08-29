@@ -28,7 +28,7 @@ const articleCanBeReplacedFree = computed(() => (props.article.PricePerUnit ?? 0
     <div class="row q-mt-lg">
       <div class="col-5 row justify-center">
         <QImg
-          class="q-my-sm"
+          class="q-my-sm q-mr-lg"
           :src="props.article.ImageUrl as string"
           spinner-color="primary"
           style="max-width: 16rem; height: 16rem"

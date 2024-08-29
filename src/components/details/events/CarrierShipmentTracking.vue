@@ -45,7 +45,7 @@ const shortDetails = [
 
 function openTracking(trackingNumber: string) {
   if (!trackingNumber) return;
-  window.open(`https://relaxdays.de/tracking/${trackingNumber}`, '_blank')?.focus();
+  window.open(`https://en.wikipedia.org/wiki/DHL`, '_blank')?.focus();
 }
 </script>
 

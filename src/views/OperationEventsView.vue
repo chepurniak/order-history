@@ -42,7 +42,7 @@ onMounted(async () => {
     style="min-height: inherit"
   >
     <div class="column col">
-      <div class="row items-center justify-between no-wrap">
+      <div class="row items-center justify-between no-wrap relative-position">
         <EventsFilterBar />
         <Transition name="opacity">
           <div
@@ -132,6 +132,8 @@ onMounted(async () => {
 .open-base-data {
   margin-top: -1rem;
   z-index: 1;
+  position: absolute;
+  right: 0;
   &-label {
     margin-right: -1.1rem;
     z-index: 2;

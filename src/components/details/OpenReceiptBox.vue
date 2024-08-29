@@ -10,21 +10,12 @@ const $q = useQuasar();
 const receiptIsLoading = ref(false);
 
 /**
- * open sage invoice receipt
+ * open invoice receipt
  */
 async function openReceipt() {
   if (receiptIsLoading.value) return;
   receiptIsLoading.value = true;
-  // const resp = await axiosWrapper('Invoice', {
-  //   method: 'GET',
-  //   baseURL,
-  //   params: {
-  //     documentYear: splittedReceiptNumber.value[0],
-  //     documentNumber: splittedReceiptNumber.value[1],
-  //     takeLivesystem: isProduction,
-  //     invoiceDocumentsOnly: false,
-  //   },
-  // });
+  await new Promise((resolve) => setTimeout(resolve, 1500));
   const resp = {
     status: 200,
     data: {}
@@ -37,7 +28,7 @@ async function openReceipt() {
   }
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
   // invoiceUrl.value = resp.data[0].assetUrl;
-  const invoiceUrl = 'https://www.google.com/';
+  const invoiceUrl = 'https://en.wikipedia.org/wiki/Receipt';
   window.open(invoiceUrl, '_blank')?.focus();
 }
 </script>

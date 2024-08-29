@@ -8,15 +8,20 @@ import { ORDER_CONFIRMATION } from 'src/types/events/OrderConfirmation';
 import { CREATED_REPLACEMENT } from 'src/types/events/CreatedReplacement';
 import { QScrollArea } from 'quasar';
 
+// mock data instead backend calls
+import { operationEventsExample } from 'src/mockData/operationEvents';
+import { baseDataExample } from 'src/mockData/baseData';
+import { orderPositionsExample } from 'src/mockData/orderPositions';
+
+
 export type OPERATION_TYPE = 'PreShipping' | 'ShippingRelated' | 'ReturnRelated' | 'ReplacementRelated' | 'Other';
-export type OPERATION_SERVICE = 'RetoureApi' | 'OrderEditor' | 'ShipmentTracking' | 'AddressCorrectionBackend';
 
 export interface OPERATION_EVENT_DTO {
   id: string;
   name: string;
   date: string;
   employee: string | null;
-  service: OPERATION_SERVICE | null;
+  service: string | null;
   type: OPERATION_TYPE;
   tags: Array<string> | null;
   details: string;
@@ -205,13 +210,13 @@ export const useOperationEventStore = defineStore('operationEventStore', {
     },
 
     async fetchOperationEvents(orderId: number): Promise<Array<OPERATION_EVENT_DTO> | null> {
-      // const resp = await axiosWrapper(`api/v1/OperationHistory/${orderId}`, {
+      // const resp = await axiosWrapper(`url/${orderId}`, {
       //   method: 'GET',
       // });
       await new Promise((resolve) => setTimeout(resolve, 2000));
       const resp = {
         status: 200,
-        data: []
+        data: operationEventsExample,
       }
       if (resp.status === 200) return resp.data as Array<OPERATION_EVENT_DTO>;
       // ToDo: richtige messagees wenn SIMS doku mit Fehler macht
@@ -220,13 +225,13 @@ export const useOperationEventStore = defineStore('operationEventStore', {
     },
 
     async fetchOperationBaseData(orderId: number): Promise<boolean> {
-      // const resp = await axiosWrapper(`api/v1/OperationBaseData/${orderId}`, {
+      // const resp = await axiosWrapper(`url/${orderId}`, {
       //   method: 'GET',
       // });
       await new Promise((resolve) => setTimeout(resolve, 2000));
       const resp = {
         status: 200,
-        data: {}
+        data: baseDataExample
       }
       if (resp.status === 200) {
         this.baseData = resp.data as BASE_DATA_DTO;
@@ -259,13 +264,13 @@ export const useOperationEventStore = defineStore('operationEventStore', {
     },
 
     async fetchPositions(orderId: number) {
-      // const resp = await axiosWrapper(`Receipts/operation-position-details/${orderId}`, {
+      // const resp = await axiosWrapper(`url/${orderId}`, {
       //   method: 'GET',
       // });
       await new Promise((resolve) => setTimeout(resolve, 2000));
       const resp = {
         status: 200,
-        data: []
+        data: orderPositionsExample,
       }
       if (resp.status === 200) {
         this.operationPositions = resp.data as Array<OVERVIEW_POSITION_DTO>;
@@ -277,7 +282,7 @@ export const useOperationEventStore = defineStore('operationEventStore', {
     },
 
     async redirectProcessToAccounting(processParentId: number) {
-      // const resp = await axiosWrapper(`Processes/move-process-to-accounting/${processParentId}`, {
+      // const resp = await axiosWrapper(`url/${processParentId}`, {
       //   method: 'PATCH',
       // });
       await new Promise((resolve) => setTimeout(resolve, 2000));

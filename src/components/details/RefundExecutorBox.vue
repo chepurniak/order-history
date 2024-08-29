@@ -52,7 +52,7 @@ async function redirectToAccountig() {
           class="q-ml-sm cursor-pointer"
           @click="redirectToAccountigDialog = true"
         />
-        <AppTooltip :label="t('orderDetails.CHANGE_REFUND_THROUGH')" />
+        <AppTooltip :label="t('CHANGE_REFUND_THROUGH')" />
       </div>
     </template>
   </AppInfoBox>
