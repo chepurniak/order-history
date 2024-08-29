@@ -1,0 +1,15 @@
+.q-toggle {
+  &.disabled {
+    opacity: 0.4 !important;
+  }
+
+  &__label {
+    color: $rd-grey;
+  }
+
+  &--dark {
+    .q-toggle__label {
+      color: white;
+    }
+  }
+}

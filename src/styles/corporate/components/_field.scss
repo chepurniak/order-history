@@ -1,0 +1,82 @@
+.q-field {
+  font-size: 1.125rem;
+
+  &__label {
+    color: $rd-grey-8;
+  }
+
+  &__native {
+    color: black;
+  }
+
+  &__rd-addon {
+    z-index: 1;
+    display: flex;
+    width: 56px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin-left: -15px;
+    background-color: $negative;
+    border-bottom-right-radius: $generic-border-radius;
+    border-top-right-radius: $generic-border-radius;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+
+    .q-icon {
+      font-size: 24px;
+    }
+  }
+
+  &--dense {
+    font-size: 0.875rem;
+  }
+
+  &--dense &__rd-addon {
+    width: 40px;
+    margin-left: -9px;
+  }
+
+  &--disabled &__control {
+    &:before {
+      border: 1px solid $rd-grey;
+      opacity: 0.4 !important;
+    }
+
+    > div {
+      color: $rd-grey-6;
+      opacity: 0.4 !important;
+    }
+  }
+
+  &--outlined &__control:before {
+    border: 1px solid $rd-grey-8;
+  }
+
+  &--standout &__control {
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+  }
+
+  &--standout .q-item--active {
+    color: $primary;
+  }
+
+  &--standout &__native,
+  &--standout &__input,
+  &--standout &__label,
+  &--standout &__marginal,
+  &--standout#{&}--focused &__marginal,
+  &--standout#{&}--focused &__native,
+  &--standout#{&}--focused &__input {
+    color: inherit;
+  }
+
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+  }
+}

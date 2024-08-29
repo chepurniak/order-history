@@ -1,0 +1,74 @@
+.rd-date-picker {
+  &.vc-container,
+  .vc-container {
+    --primary-200: #{$dodger-blue-2};
+    --primary-600: #{$primary};
+    --primary-700: #{$primary};
+    --primary-800: #{$primary};
+    --rounded: #{$generic-border-radius};
+    --rounded-lg: #{$generic-border-radius};
+
+    .vc-weekday {
+      color: black;
+    }
+
+    .vc-day {
+      &.weekday-2,
+      &.weekday-3,
+      &.weekday-4,
+      &.weekday-5,
+      &.weekday-6 {
+        color: $dodger-blue-6;
+        > span {
+          font-weight: bold;
+        }
+      }
+      &.weekday-7,
+      &.weekday-1 {
+        color: $rd-grey-10;
+      }
+    }
+
+    .vc-header {
+      padding: 6px 10px;
+      background-color: $primary;
+      border-top-left-radius: #{$generic-border-radius};
+      border-top-right-radius: #{$generic-border-radius};
+      .vc-title {
+        color: white;
+        font-size: 1rem;
+      }
+    }
+
+    .vc-arrows-container {
+      padding: 5px 10px;
+      > .vc-arrow {
+        border-radius: 50%;
+        color: white;
+        &:hover {
+          background-color: $primary-light;
+        }
+
+        > .vc-svg-icon {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+    }
+
+    .vc-popover-caret {
+      display: none;
+    }
+
+    .is-disabled {
+      font-weight: normal !important;
+      pointer-events: none;
+    }
+  }
+  .on-right {
+    margin-left: 0px;
+  }
+  .on-left {
+    margin-right: 0px;
+  }
+}

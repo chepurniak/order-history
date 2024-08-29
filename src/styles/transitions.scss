@@ -1,0 +1,42 @@
+.opacity-enter-active,
+.opacity-leave-active {
+  transition: opacity .3s ease;
+}
+
+.opacity-enter-from,
+.opacity-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-enter-active {
+  animation: change-width .5s;
+}
+.slide-fade-leave-active {
+  animation: change-width .5s reverse;
+}
+@keyframes change-width {
+  0% {
+    opacity: 0;
+    max-width: 0;
+  }
+  100% {
+    opacity: 1;
+    max-width: 22vw;
+  }
+}
+
+.list-move,
+.list-enter-active,
+.list-leave-active {
+  transition: all .6s ease;
+}
+
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(3rem);
+}
+
+.list-leave-active {
+  position: absolute;
+}

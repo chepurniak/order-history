@@ -1,0 +1,29 @@
+.q-stepper {
+  &__dot {
+    width: 22px;
+    min-width: 22px;
+    height: 22px;
+    font-size: 14px;
+  }
+
+  &--horizontal {
+    .q-stepper__line:before,
+    .q-stepper__line:after {
+      background: $rd-grey-7;
+    }
+  }
+
+  &__tab {
+    color: $rd-grey-7;
+
+    &--done {
+      color: $positive;
+    }
+    &--error {
+      color: $negative;
+    }
+    &--active {
+      color: $primary;
+    }
+  }
+}

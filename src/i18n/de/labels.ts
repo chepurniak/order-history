@@ -1,0 +1,15 @@
+export default {
+  APP_BACK: 'Zurück',
+  APP_CHANGE: 'Ändern',
+  APP_CLOSE: 'Schließen',
+  APP_COPY: 'Kopieren',
+  APP_DELETE: 'Löschen',
+  APP_HOME: 'Startseite',
+  APP_NO_INFO: 'Keine Information',
+  APP_NO: 'Nein',
+  APP_ORDER_DETAILS: 'Vorgangsauskunft',
+  APP_SAVE: 'Speichern',
+  APP_SUMMARY: 'Zusammenfassung',
+  APP_UNKNOWN: 'Unbekannt',
+  APP_YES: 'Ja',
+};

@@ -1,0 +1,19 @@
+.q-message {
+  margin-bottom: 1rem;
+
+  &-label,
+  &-name,
+  &-stamp {
+    color: $rd-grey-10;
+  }
+
+  &-label {
+    margin: 0;
+  }
+  &-text {
+    max-width: 920px;
+    color: $rd-grey-4;
+    font-size: 0.875rem;
+    line-height: 1.3;
+  }
+}

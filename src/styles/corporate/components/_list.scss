@@ -1,0 +1,43 @@
+.rd-list {
+  padding-left: 1rem;
+  margin: 0;
+
+  > li {
+    padding-bottom: 0.3rem;
+  }
+
+  > li:last-child {
+    padding-bottom: 0;
+  }
+
+  &.text-h1 {
+    padding-left: 2.188rem;
+  }
+  &.text-h2 {
+    padding-left: 1.5rem;
+  }
+  &.text-h3 {
+    padding-left: 1.25rem;
+  }
+  &.text-h4 {
+    padding-left: 1.125rem;
+  }
+  &.text-h5 {
+    padding-left: 1rem;
+  }
+  &.text-h6 {
+    padding-left: 0.875rem;
+  }
+  &.text-subtitle2 {
+    padding-left: 1rem;
+  }
+  &.text-body1 {
+    padding-left: 1.125rem;
+  }
+  &.text-body2 {
+    padding-left: 1rem;
+  }
+  &.text-caption {
+    padding-left: 0.75rem;
+  }
+}

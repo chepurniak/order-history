@@ -1,0 +1,57 @@
+@mixin generate-dl-cols($count: 1) {
+  @if $count > 1 {
+    // this grid layout puts an extra column after each dd except the last, so there is no margin
+    // around the definition list
+    grid-template-columns:
+      repeat(#{$count - 1}, [dt-start] auto [dt-end dd-start] auto [dd-end] 1.5rem)
+      [dt-start] auto [dt-end dd-start] auto [dd-end];
+  } @else {
+    grid-template-columns: [dt-start] auto [dt-end dd-start] auto [dd-end];
+  }
+  @for $i from 1 through $count {
+    > dt:nth-of-type(#{$count}n + #{$i}) {
+      grid-column: dt-start #{$i} / dt-end #{$i};
+    }
+    > dd:nth-of-type(#{$count}n + #{$i}) {
+      grid-column: dd-start #{$i} / dd-end #{$i};
+    }
+  }
+}
+
+.rd-dl {
+  display: inline-grid;
+  margin: 0;
+  row-gap: 10px;
+
+  > dt {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    grid-column-start: 1;
+    line-height: 1.43;
+  }
+
+  > dd {
+    margin-left: 10px;
+    color: $rd-grey-10;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    grid-column-start: 2;
+    line-height: 1.43;
+  }
+
+  @for $i from 1 through 6 {
+    &--#{$i} {
+      @include generate-dl-cols($i);
+    }
+  }
+
+  @for $i from 1 through 6 {
+    @each $name, $size in $sizes {
+      @media (min-width: #{$size}) {
+        &--#{$name}-#{$i} {
+          @include generate-dl-cols($i);
+        }
+      }
+    }
+  }
+}

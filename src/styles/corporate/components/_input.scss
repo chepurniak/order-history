@@ -1,0 +1,20 @@
+.q-input.rd-denser {
+  .q-field__control,
+  .q-field__marginal {
+    height: 1.75rem;
+  }
+
+  .q-field__label,
+  .q-field__native {
+    top: 0.25rem;
+    font-size: 0.875rem;
+  }
+
+  &.q-field--labeled .q-field__native {
+    padding-top: 0.875rem;
+  }
+
+  .q-icon {
+    font-size: 1.25rem;
+  }
+}

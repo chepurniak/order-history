@@ -1,0 +1,18 @@
+.q-editor {
+  &__toolbar {
+    .q-btn {
+      color: $rd-grey-9;
+
+      .q-icon {
+        font-size: 1.2rem;
+      }
+
+      &__content {
+        span {
+          font-size: 0.85rem;
+          font-weight: 350;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ranga:wght@400;700&display=swap');
+@import 'event-colors.scss';
+@import 'transitions.scss';
+
+body {
+  overflow: hidden;
+  font-family: "Open Sans", sans-serif;
+}
+
+h5 {
+  margin: 0;
+}
+
+.app-background {
+  background-color: #EAF1F5;
+}
+
+.app-default-border-radius {
+  border-radius: .3rem;
+}
+
+.base-data {
+  width: 22vw;
+}
+
+.active-event {
+  transform: scale(0.97);
+}
+
+.short-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 0.75rem;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $grey-8;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $grey-6;
+}
+
+.q-toggle__thumb {
+  border: 0.1rem solid #fff;
+  border-radius: 50%;
+}
+
+.q-card {
+  border-radius: 0.5rem;
+}
+
+@media screen and (max-width: 1700px) {
+  .app-fontsize, .q-table tbody td, .q-table thead th {
+    font-size: .75rem;
+  }
+  h5 {
+    font-size: .875rem;;
+  }
+
+  :deep(q-field--dense.q-field__control) {
+    height: 30px;
+  }
+}
+
+@media screen and (min-width: 1701px) {
+  .app-fontsize, .q-table tbody td, .q-table thead th {
+    font-size: 1rem;
+  }
+}

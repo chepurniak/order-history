@@ -1,0 +1,15 @@
+export default {
+  APP_BACK: 'Back',
+  APP_CHANGE: 'Change',
+  APP_CLOSE: 'Close',
+  APP_COPY: 'Copy',
+  APP_DELETE: 'Delete',
+  APP_HOME: 'Homepage',
+  APP_NO_INFO: 'No info',
+  APP_NO: 'No',
+  APP_ORDER_DETAILS: 'Order details',
+  APP_SAVE: 'Save',
+  APP_SUMMARY: 'Summary',
+  APP_UNKNOWN: 'Unknown',
+  APP_YES: 'Yes',
+};

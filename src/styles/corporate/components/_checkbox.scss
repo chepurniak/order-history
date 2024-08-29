@@ -1,0 +1,17 @@
+.q-checkbox {
+  &.disabled {
+    opacity: 0.4 !important;
+  }
+
+  &__label {
+    color: $rd-grey;
+  }
+
+  &--dense {
+    .q-checkbox__inner {
+      width: 0.556em;
+      min-width: 0.556em;
+      height: 0.556em;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+export default {
+  COUNTRY: 'Länderkürzel',
+  CUSTOMER_ADDRESS: 'Kundenadresse',
+  CUSTOMER_DETAILS: 'Kundendetails',
+  CUSTOMER_MAIL: 'Kunden-Mail',
+  CUSTOMER_NAME: 'Kundenname',
+  CUSTOMER_NUMBER: 'Kunden-Nr',
+  MARKETPLACE_REFERENCE_NUMBER: 'Marktplatz-Referenz-Nr',
+  MARKETPLACE: 'Marktplatz',
+  ORDER_DETAILS: 'Auftragsdetails',
+  PAYMENT_CONDITION: 'Zahlungskondition',
+  PAYMENT_DETAILS: 'Zahlungsinformationen',
+  PAYMENT_REFERENCE: 'Zahlungsreferenz',
+  MINI_DELIVERY_NUMBER: 'Mini-Lieferschein-Nr',
+  EBAY_USER_NAME: 'Ebay-Name',
+};

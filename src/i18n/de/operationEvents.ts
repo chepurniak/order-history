@@ -1,0 +1,15 @@
+export default {
+  AFTER_DELIVERY: 'Nach Zustellung',
+  BASE_DATA: 'Referenzdaten',
+  BROWSE_EVENTS: 'Events durchsuchen',
+  NO_EVENTS: 'Der Beleg hat noch keine Events',
+  NO_FILTERED_EVENTS: 'Es konnten keine passenden Filterergebnisse gefunden werden',
+  OTHER: 'Sonstige',
+  PRE_SHIPPING: 'Vor dem Versand',
+  REPLACEMENT_RELATED: 'Ersatzlieferung',
+  RESET_FILTER: 'Filter zurücksetzen',
+  RETURN_RELATED: 'Retoure',
+  SHIPPING_RELATED: 'Zum Versand',
+  UNKNOWN_DATE: 'Datum unbekannt',
+  UNKNOWN_EVENT: 'Unbekanntes Event',
+};

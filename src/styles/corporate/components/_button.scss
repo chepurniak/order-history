@@ -1,0 +1,7 @@
+.q-btn {
+  line-height: 1.5em;
+
+  &.disabled {
+    opacity: 0.4 !important;
+  }
+}

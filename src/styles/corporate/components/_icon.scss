@@ -1,0 +1,8 @@
+.q-icon {
+  &[class^='text-'],
+  &[class*=' text-'] {
+    path[style] {
+      fill: currentColor !important;
+    }
+  }
+}

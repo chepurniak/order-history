@@ -1,0 +1,28 @@
+$additional-colors: (
+  "mint-light": #C3DED6,
+  "mint-dark": #1E493C,
+
+  'pigeon-light': #AAC7D8,
+  'pigeon-dark': #2B5066,
+
+  'nut-light': #BF9260,
+  'nut-dark': #4A2E0F,
+
+  'peach-light': #FF9248,
+  'peach-dark': #752805,
+
+  'swamp-light': #BFAF60,
+  'swamp-dark': #50440C,
+
+  'powder-light': #ECF0F5,
+);
+
+@each $name, $color in $additional-colors {
+  .text-#{$name} {
+    color: $color !important;
+  }
+
+  .bg-#{$name} {
+    background: $color !important;
+  }
+}

@@ -1,0 +1,9 @@
+.q-item {
+  &--clickable {
+    color: $rd-grey-10;
+  }
+
+  &__section--avatar {
+    min-width: initial;
+  }
+}

@@ -1,0 +1,32 @@
+@import './quasar-overrides.silent';
+
+// core customizations
+@import './core/colors';
+
+// component customizations
+@import './components/button';
+@import './components/card';
+@import './components/carousel';
+@import './components/chat';
+@import './components/checkbox';
+@import './components/date-picker';
+@import './components/definition-list';
+@import './components/editor';
+@import './components/field';
+@import './components/icon';
+@import './components/input';
+@import './components/item';
+@import './components/list';
+@import './components/option-group';
+@import './components/notify';
+@import './components/radio';
+@import './components/stepper';
+@import './components/tab';
+@import './components/table';
+@import './components/toggle';
+@import './components/tooltip';
+
+.disabled,
+[disabled] {
+  opacity: 0.4 !important;
+}

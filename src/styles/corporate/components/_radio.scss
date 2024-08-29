@@ -1,0 +1,9 @@
+.q-radio {
+  &.disabled {
+    opacity: 0.4 !important;
+  }
+
+  &__label {
+    color: $rd-grey;
+  }
+}
